@@ -1,8 +1,10 @@
+require 'pry'
+ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
 def alphabetize(arr)
   # code here
-  # ESPERANTO_ALPHABET = " abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
-  count = 0
-  arr.sort_by{|w| 
-    w 
-  } 
+  word_ind = arr.map{|a| [a.split("").map{ |char| ESPERANTO_ALPHABET.index(char)}, a] }
+  # binding.pry
+  result = []
+  word_ind.sort.each{|ary| result.push(ary[1])}
+  result
 end
